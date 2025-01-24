@@ -1,7 +1,10 @@
 NAME		=	push_swap
 
+LIBFT 		= 	./includes/libft/libft.a
+
 SRCS		=	main.c \
 				utils.c \
+				parsing.c \
 				operations.c
 
 OBJS		=	$(SRCS:.c=.o)
@@ -11,10 +14,14 @@ CFLAGS 		=	-Wall -Werror -Wextra
 RM			=	rm -rf
 AR			=	ar rcs
 
-all:		$(NAME)
+all:		$(LIBFT) $(NAME)
 
-$(NAME):	$(OBJS)
-	$(AR) $(NAME) $(OBJS)
+$(LIBFT):
+	@echo "Building libft... Plese wait."
+	@make -C ./libraries/libft > /dev/null 2>&1
+
+$(NAME):	$(OBJS) $(LIBFT)
+	$(AR) $(NAME) $(OBJS) ${LIBFT}
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

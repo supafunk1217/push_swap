@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:57:12 by rcossett          #+#    #+#             */
-/*   Updated: 2025/01/24 14:41:10 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/01/24 16:18:17 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,13 @@ void	check_args(int argc, char *argv[])
 	int	i;
 
 	i = 0;
-	if (argc == 3)
+	if (argc != 3)
 	{
-		if (argv[1][i] != || argv[2][i] != )
-			printf("Error: enter numbers.\n");
+		if (argv[1][i] >= 'A' || argv[1][i] <= 'Z' ||
+			 argv[1][i] >= 'a' || argv[1][i] <= 'z')
+				printf("Error: enter numbers.\n");
+		if (argv[1][i] )
+
 	}
 }
 
@@ -60,7 +63,7 @@ void	init_stack(t_stack *stack)
 	check_args();
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {	
 	init_stack();
 	//check_args();

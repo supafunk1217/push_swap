@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:54:35 by rcossett          #+#    #+#             */
-/*   Updated: 2025/01/24 14:59:44 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/01/24 15:43:20 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include "../includes/libft/includes/libft.h" 
 
 #endif
 
