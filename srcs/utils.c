@@ -6,43 +6,43 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 00:05:41 by rcossett          #+#    #+#             */
-/*   Updated: 2025/01/24 14:42:27 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:40:22 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	get_stack_size(t_stack *stack)
+void	check_duplicate(int argc, char **argv)
 {
+	int	i;
+	int	j;
 
-}
-
-int	get_operations_cost(t_stack *stack, int value)
-{
-	int	position;
-	int	stack_size;
-
-	if (!stack || !stack->top)
-		return (NULL);
-	position = find_position();
-	stack_size = get_stack_size(stack);
-	
-}
-
-t_node	*find_smallest_value(t_stack *stack)
-{
-	t_node	*current;
-	t_node	*smallest;
-
-	if (!stack || !stack->top)
-		return (NULL);
-	current = stack->top;
-	smallest = current;
-	while (current)
+	i = 1;
+	while (i < argc)
 	{
-		if (current->value < smallest->value)
-			smallest = current;
-		current = current->next;
+		j = i + 1;
+		while (j < argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				exit(1);
+			j++;
+		}
+		i++;
 	}
-	return (smallest);
+}
+
+void	check_character(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) || str[i] == ' '
+			|| ((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1])))
+			i++;
+		else
+			exit(1);
+	}
+	printf("=== Sortie de check_character ===\n");
 }

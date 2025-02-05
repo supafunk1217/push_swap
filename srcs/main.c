@@ -6,71 +6,51 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:57:12 by rcossett          #+#    #+#             */
-/*   Updated: 2025/01/24 16:18:17 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/05 18:25:26 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
-
-int	find_node(t_stack *stack, int to_find)
-{
-	t_node	*current;
-	int		position;
-
-	if (!stack || stack->top)
-		return (-1);				// -1 pour retour erreur
-	current = stack->top;
-	position = 0;
-	while (stack)					// tant qu'on itere dans stack
-	{
-		if (current == to_find)		// si character est identique a to_find
-			return (position);		// on retourne position dans la stack
-		current = current ->next;	// on passe a la prochaine position avec next
-		position++;					// on incremente position pour actualiser le compte
-	}
-	return (-1);
-}
-
-t_node	*create_node(int value)
-{
-	t_node	*new;
-
-	new = malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = value;
-	new->next = NULL;
-	return (new);
-}
+#include "../includes/push_swap.h"
 
 void	check_args(int argc, char *argv[])
 {
-	int	i;
-
-	i = 0;
-	if (argc != 3)
+	printf("entree check args\n");
+	if (argc < 2)
+		exit(1);
+	if (argc == 2)
 	{
-		if (argv[1][i] >= 'A' || argv[1][i] <= 'Z' ||
-			 argv[1][i] >= 'a' || argv[1][i] <= 'z')
-				printf("Error: enter numbers.\n");
-		if (argv[1][i] )
-
+		check_character(argv[1]);
+		check_duplicate(argc, argv);
 	}
-}
-
-void	init_stack(t_stack *stack)
-{
-	check_args();
+	printf("sortie check args\n");
+	return ;
 }
 
 int	main(int argc, char *argv[])
 {	
-	init_stack();
-	//check_args();
-	init_visualizer;
-	find_smallest_value;
+	t_stack	*stack;
+	int		stack_size;
 
-
-
-	free (stack);
+    printf("=== Début du programme ===\n");
+    printf("argc = %d\n", argc);
+    printf("argv[1] = %s\n", argv[1]);
+	check_args(argc, argv);
+	printf("=== Check args passé ===\n");
+	stack_size = count_numbers(argc, argv); // compter combien de nombres nous avons
+    printf("Stack size après count_numbers : %d\n", stack_size);
+	stack = init_stack(stack_size); // init a la bonne taille
+	printf("Stack size_a après init : %d\n", stack->size_a);
+	if (!stack)
+		return (1);
+	fill_stack(stack, argc, argv); // remplir stack
+	sort_stack(stack);
+	printf("stack apres tri:\n");
+	for (int i = 0; i < stack->size_a; i++)
+        printf("a[%d] = %d\n", i, stack->a[i]);
+	free(stack->a);
+	free(stack->b);
+	free(stack);
+	return (0);
 }
+
+ // A FAIRE; CHECK LOGIQUE REVERSE_ROTATE DERNIERE CONVERSATION AVEC CLAUDE, TOUT LE FICHIER ROTATE VIENT DETRE COLLE
