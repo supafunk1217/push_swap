@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:21:19 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/05 15:10:28 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:19:26 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	sort_stack(t_stack *stack)
 		if (stack->a[0] > stack->a[1])
 			swap_a(stack);
 	}
+	if (stack->size_a == 3)
+		sort_three(stack);
 }
 
 void	fill_stack(t_stack *stack, int argc, char **argv)
@@ -85,7 +87,7 @@ int	count_numbers(int argc, char **argv)
 		while (count > 0)
 		{
 			count--;
-			free(numbers[--count]);
+			free(numbers[count]);
 		}
 		free(numbers);
 		return (total);
