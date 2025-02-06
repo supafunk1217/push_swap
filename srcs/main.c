@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:57:12 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/06 17:19:58 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:28:16 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,9 @@ int	main(int argc, char *argv[])
 	t_stack	*stack;
 	int		stack_size;
 
-    printf("=== Début du programme ===\n");
-    printf("argc = %d\n", argc);
-    printf("argv[1] = %s\n", argv[1]);
 	check_args(argc, argv);
-	printf("=== Check args passé ===\n");
 	stack_size = count_numbers(argc, argv); // compter combien de nombres nous avons
-    printf("Stack size après count_numbers : %d\n", stack_size);
 	stack = init_stack(stack_size); // init a la bonne taille
-	printf("Stack size_a après init : %d\n", stack->size_a);
 	if (!stack)
 		return (1);
 	fill_stack(stack, argc, argv); // remplir stack
@@ -53,4 +47,4 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 
- // A FAIRE;
+ // A FAIRE; message d'erreur pour doublons (check_duplicate etc), sort four et five, radix. check conv claude
