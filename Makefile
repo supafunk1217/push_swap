@@ -6,8 +6,9 @@ SRCS	=	$(SRC_DIR)main.c \
 			$(SRC_DIR)stacks.c \
 			$(SRC_DIR)utils.c \
 			$(SRC_DIR)sorting.c \
-			$(SRC_DIR)swap.c \
-			$(SRC_DIR)rotate.c
+			$(SRC_DIR)swap_push.c \
+			$(SRC_DIR)rotate.c \
+			$(SRC_DIR)reverse_rotate.c 
 
 OBJS	=	$(SRCS:.c=.o)
 CC 		=	gcc
