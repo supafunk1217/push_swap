@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:57:12 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/06 17:28:16 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:00:35 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ int	main(int argc, char *argv[])
 		return (1);
 	fill_stack(stack, argc, argv); // remplir stack
 	sort_stack(stack);
-	printf("stack apres tri:\n");
-	for (int i = 0; i < stack->size_a; i++)
-        printf("a[%d] = %d\n", i, stack->a[i]);
 	free(stack->a);
 	free(stack->b);
 	free(stack);

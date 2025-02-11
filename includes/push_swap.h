@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:54:35 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/06 16:09:29 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:14:47 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ void			reverse_rotate_a(t_stack *stack);
 void			reverse_rotate_b(t_stack *stack);
 void			reverse_rotate_both(t_stack *stack);
 void			sort_three(t_stack *stack);
+void			sort_four(t_stack *stack);
+void			sort_five(t_stack *stack);
+void			radix_sort(t_stack *stack);
 
 #endif

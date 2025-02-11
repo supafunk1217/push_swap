@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 00:05:41 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/06 17:26:01 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:58:41 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_duplicate(int argc, char **argv)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 			{
-				printf("Error: duplicate numbers found.\n");
+				printf("Error\n");
 				exit(1);
 			}
 			j++;
