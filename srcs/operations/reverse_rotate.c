@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 17:43:37 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/06 16:15:57 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:37:40 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 void	reverse_rotate_a(t_stack *stack)
 {
 	int	i;
-	int stack_bottom;								// pour dernier element
+	int	stack_bottom;
 
-	if (stack->size_a < 2)							// si il y a moins de deux elements dans la stack, rien a trier
+	if (stack->size_a < 2)
 		return ;
-	stack_bottom = stack->a[stack->size_a - 1];		// on assigne la derniere case du tableau a stack_bottom
-	i = stack->size_a - 1;							// on place i en bas de la chaine pour parcourir depuis le bas
-	while (i > 0)									// tant que i n'est pas revenu au debut
+	stack_bottom = stack->a[stack->size_a - 1];
+	i = stack->size_a - 1;
+	while (i > 0)
 	{
-		stack->a[i] = stack->a[i - 1];				// on assigne a[i] a la derniere valeur pour faire remonter
+		stack->a[i] = stack->a[i - 1];
 		i--;
 	}
-	stack->a[0] = stack_bottom;						// on place le premier a la fin
+	stack->a[0] = stack_bottom;
 	printf("rra\n");
 }
 
 void	reverse_rotate_b(t_stack *stack)
 {
 	int	i;
-	int stack_bottom;
+	int	stack_bottom;
 
 	if (stack->size_b < 2)
 		return ;

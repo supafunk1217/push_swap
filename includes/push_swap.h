@@ -6,7 +6,7 @@
 /*   By: rcossett <rcossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:54:35 by rcossett          #+#    #+#             */
-/*   Updated: 2025/02/11 15:14:47 by rcossett         ###   ########.fr       */
+/*   Updated: 2025/02/20 20:04:40 by rcossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,14 @@ typedef struct s_stack
 	int			size_b;
 }				t_stack;
 
-// stack_utils
-
-int				count_numbers(int argc, char **argv); 				// pour compter nombre d'arguments dans UNE SEULE CHAINE " "
-t_stack			*init_stack(int argc); 								// malloc + init stack
-void			fill_stack(t_stack *stack, int argc, char **argv);	// remplir la stack en incrementant, puis free
-void			sort_stack(t_stack *stack);							// 
-
-// errors check
-void			check_character(char *str);			 				// pour verifier si les caracteres sont bien des numeros
-void			check_duplicate(int argc, char **argv); 			// pour check si doublons dans les arguments
-
-// operations
-
+int				count_numbers(int argc, char **argv);
+t_stack			*init_stack(int argc);
+void			create_index(t_stack *stack);
+void			fill_stack(t_stack *stack, int argc, char **argv);
+void			sort_stack(t_stack *stack);
+void			check_character(char *str);
+void			check_duplicate(int argc, char **argv);
+int				find_min(t_stack *stack);
 void			swap_a(t_stack *stack);
 void			swap_b(t_stack *stack);
 void			swap_both(t_stack *stack);
